@@ -1,0 +1,31 @@
+<div class="container" ng-controller="ListaTopicosController">
+<div class="row">
+  <div class="col-md-6">
+    <input type="search " ng-model="search" placeholder="Buscar por...">
+  </div>
+  <div class="col-md-3">
+    <a href="#/cadastro">Criar Tópico</a>
+  </div>
+</div>
+<div class="row">
+  <table id="lista-compras" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Assunto</th>
+        <th>Descrição</th>
+        <th>Likes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="topico in topicos | filter:search" class="comprado-{{ topico.comprado }}">
+        <td><strong>{{ topico.assunto }}</strong></td>
+        <td><strong>{{ topico.descricao }}</strong></td>
+        <td><strong>{{ topico.grau }}</strong></td>
+        <td><strong>
+          <a href="#/topico/{{topico._id}}">Acessar</a>
+        </strong></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

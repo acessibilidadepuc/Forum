@@ -1,0 +1,40 @@
+
+<div class="row">
+  <div class="col-md-6">
+    <input type="search " ng-model="search" placeholder="Buscar por...">
+  </div>
+  <div class="col-md-3">
+    <a href="#/cadastroComentario/{{comentarios[0].idTopico}}">Comentar sobre</a>
+  </div>
+</div>
+<div class="row">
+  <table id="" class="table table-striped">
+    <thead>
+      <tr>
+        <th>Data Hora</th>
+        <th>Comentários</th>
+        <th>Responsável</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="comentario in comentarios | filter:search" class="comprado-{{ comentario.comprado }}">
+        <td><strong>{{ comentario.dataHora }}</strong></td>
+        <td><strong>{{ comentario.comentario }}</strong></td>
+        <td><strong>{{ comentario.idUsuario }}</strong></td>
+        <td>
+
+          <a href="#/comentario/{{comentario._id}}">Acessar</a>
+          <!--
+          <button class="btn btn-success btn-small" ng-click="AcessarTopico($index)">
+             Acessar
+          </button>
+          > -->
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<a href="#/topicos">Voltar</a>
+</h1>
